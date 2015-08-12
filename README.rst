@@ -1,3 +1,5 @@
+Bernard M 1.8.x Stable
+
 Django is a high-level Python Web framework that encourages rapid development
 and clean, pragmatic design. Thanks for checking it out.
 
