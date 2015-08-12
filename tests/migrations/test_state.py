@@ -1067,13 +1067,8 @@ class RelatedModelsTests(SimpleTestCase):
         self.assertRelated(T, [A, B, S])
 
     def test_generic_fk(self):
-        A = self.create_model("A", foreign_keys=[
-            models.ForeignKey('B', models.CASCADE),
-            GenericForeignKey(),
-        ])
-        B = self.create_model("B", foreign_keys=[
-            models.ForeignKey('C', models.CASCADE),
-        ])
+        A = self.create_model("A", foreign_keys=[models.ForeignKey('B'), GenericForeignKey()])
+        B = self.create_model("B", foreign_keys=[models.ForeignKey('C')])
         self.assertRelated(A, [B])
         self.assertRelated(B, [A])
 
